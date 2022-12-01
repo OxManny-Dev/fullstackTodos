@@ -44,14 +44,19 @@ const App = () => {
       >
         Decrement
       </button>
-      <Todo
-        name={'Manny'}
-        todos={[
-          'Take the trash out',
-          'Do the dishes',
-          'Pay the bills',
-        ]}
-      />
+      {
+        count % 2 === 0 ?
+          <Todo
+            name={'Manny'}
+            todos={[
+              'Take the trash out',
+              'Do the dishes',
+              'Pay the bills',
+            ]}
+          />
+          :
+          null
+      }
       {/*<Todo*/}
       {/*  name={'Joseph'}*/}
       {/*  todos={[*/}

@@ -23,7 +23,7 @@ const typeDefs = gql`
         firstName: String
         lastName: String
         fullName: String
-        todos: [Todo]
+        todos: [Todo]!
     }
 
     type Todo {
@@ -38,13 +38,17 @@ const typeDefs = gql`
     # what type of data they require as input as well as what type of data they return
     # always declare the typeDefs first, before creating the actual resolver
     
+    
+    
+#    Just GET === Query
     type Query {
-        fetchUsers: [User]
+        fetchUsers: [User]!
 #        This lets us know, that this query requires an "id" as the input and it must be a string and the "!" means that it is required
         fetchUserById(id: String!): User
-        fetchTodos: [Todo]
+        fetchTodos: [Todo]!
     }
     
+#    Everything except get === mutation
     type Mutation {
         createUser(firstName: String!, lastName: String!): User
         createTodo(userId: String!, todo: String!): Todo
