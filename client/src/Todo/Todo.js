@@ -17,9 +17,11 @@ const ourBlue = '#0000ee';
 
 export const Todo = ({name,}) => {
   const {
-    todoInput, setTodoInput,
+    todoInput,
+    setTodoInput,
     loading,
     data,
+    error,
   } = useTodos('https://jsonplaceholder.typicode.com/todos');
 
 

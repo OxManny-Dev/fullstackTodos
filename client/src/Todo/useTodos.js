@@ -7,6 +7,7 @@ export const useTodos = (url) => {
 
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
+  const [error, setError ] = useState(undefined);
 
 
   // Tip use array method splice
@@ -31,6 +32,10 @@ export const useTodos = (url) => {
       .then(data => {
         setData(data);
         setLoading(false);
+      })
+      .catch(e => {
+        setError(e);
+        setLoading(false);
       });
 
     // when we return a callback function in useEffect
@@ -47,5 +52,6 @@ export const useTodos = (url) => {
     todoInput, setTodoInput,
     loading,
     data,
+    error,
   };
 };
