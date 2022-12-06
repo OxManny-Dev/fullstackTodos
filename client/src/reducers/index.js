@@ -2,9 +2,9 @@
 // So they gave us a function called "combineReducers"
 import { combineReducers } from 'redux';
 
-import counterReducer from './counterReducer';
+import {counterReducer} from './counterReducer';
 
-export default combineReducers({
+export const rootReducer = combineReducers({
   counter: counterReducer,
 });
 

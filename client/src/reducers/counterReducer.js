@@ -1,7 +1,7 @@
 import { INCREMENT } from '../actions/counter/types';
 
-
-export default function(state = { count: 0 }, action) {
+// action creator > dispatch > reducers > store
+export const counterReducer = function(state = { count: 0 }, action) {
   switch (action.type) {
     case INCREMENT:
       return { ...state, count: state.count + 1};
