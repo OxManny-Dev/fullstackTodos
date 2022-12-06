@@ -1,5 +1,5 @@
 import {useState} from 'react';
-
+import { useSelector, useDispatch, } from 'react-redux';
 import {
   Todo,
 } from './Todo';
@@ -19,10 +19,13 @@ import {
 
 const App = () => {
 
+  const { count } = useSelector((state) => state.counter);
+  // console.log(storeState);
+
   // useState returns an array with 2 elements
   // 1st element = whatever pass as a parameter to useState
   // 2nd element = is a function for changing the value of the 1st element
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
 
   return (
@@ -30,7 +33,7 @@ const App = () => {
       <p>Counter: {count}</p>
       <button
         onClick={() => {
-          setCount(count + 1);
+          // setCount(count + 1);
         }}
       >
         Increment
@@ -38,7 +41,7 @@ const App = () => {
       <button
         onClick={() => {
           if (count > 0) {
-            setCount(count - 1);
+            // setCount(count - 1);
           }
         }}
       >
