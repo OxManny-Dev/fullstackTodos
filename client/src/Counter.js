@@ -1,8 +1,10 @@
-import {useReducer} from 'react';
-import {counterReducer} from './utils/counterReducer';
-import {useCounter} from './utils/CounterProvider';
+import { useReducer } from 'react';
+import { counterReducer } from './utils/counterReducer';
+import { useCounter } from './utils/CounterProvider';
 
 export const Counter = () => {
+
+
   const counterState = useCounter();
   // { count: 0 }
   // useReducer takes 2 parameters.
@@ -13,6 +15,7 @@ export const Counter = () => {
 
   return (
     <div>
+      <h1>Hello</h1>
       <h1>I am counter component {state.count}</h1>
       <input
         onChange={(event) => {
@@ -31,14 +34,14 @@ export const Counter = () => {
           // that object must have a "type" property
           // that object will become what "action" is
           // on the reducer that created it
-          dispatch({type: 'INCREMENT'});
+          dispatch({ type: 'INCREMENT' });
         }}
       >
         Increment
       </button>
       <button
         onClick={() => {
-          dispatch({type: 'DECREMENT'});
+          dispatch({ type: 'DECREMENT' });
         }}
       >
         Decrement
