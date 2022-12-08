@@ -6,6 +6,7 @@ import {createStore} from 'redux';
 import {rootReducer} from './reducers';
 
 import App from './App';
+import CounterProvider from "./utils/CounterProvider";
 
 
 const client = new ApolloClient({
@@ -14,6 +15,8 @@ const client = new ApolloClient({
 });
 
 const store = createStore(rootReducer);
+
+console.log(store.getState());
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

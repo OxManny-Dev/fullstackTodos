@@ -1,4 +1,5 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useContext } from 'react';
+
 export const CounterContext = createContext();
 // hooks that anyone makes has to start with the word "use"
 // this allows us to call this hook in any child component
@@ -10,14 +11,12 @@ export const CounterContext = createContext();
 export const useCounter = () => useContext(CounterContext);
 
 const CounterProvider = ({ children }) => {
-  const [ counter, setCounter ] = useState(420);
 
   return (
     <CounterContext.Provider
       value={{
-        counter,
-        setCounter,
-        isMannyCool: 'hell nah',
+        count: 420,
+        name: 'manny',
       }}
     >
       {children}
